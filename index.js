@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Extend node util module
+ * @author douzi <liaowei08@gmail.com> 
+ */
 var util = require('util');
 var toString = Object.prototype.toString;
 var isWindows = process.platform === 'win32';
@@ -48,6 +52,8 @@ exports.extend = function() {
   args.forEach(function(item) {
     extend(target, item);
   });
+
+  return target;
 };
 
 exports.isObject = isObject;
