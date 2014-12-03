@@ -32,6 +32,11 @@ Chck target is array
 uitl.isArray = Array.isArray
 
 ```
+### util.isNumber
+
+### util.isDate
+
+### util.isRegExp
 
 ### util.isFunction
 
@@ -40,6 +45,7 @@ uitl.isArray = Array.isArray
 ### util.isUndefined
 
 ### util.noop
+Empty function
 
 ### util.unique
 Make array unique.
