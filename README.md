@@ -54,6 +54,16 @@ var arr = [4, 5, 5, 6];
 var result = uitl.unique(arr);
 ```
 
+### util.escape
+Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' characters.
+```js
+var html = '<div></div>'
+var result = util.escape('<div></div>')
+```
+
+### util.unescape
+The opposite of escape
+
 ### util.path.isAbsolute
 Return true is path isabsolute, otherwise return false.
 ```
