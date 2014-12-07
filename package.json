@@ -1,8 +1,8 @@
 {
-  "name": "utils-extend",
-  "version": "1.0.6",
-  "description": "Extend nodejs util api, and it is light weight and simple",
-  "main": "index.js",
+  "name": "file-match",
+  "version": "1.0.0",
+  "description": "Match filepath is validated, or exclude filepath that don't need.",
+  "main": "filepath-match.js",
   "scripts": {
     "test": "mocha test"
   },
@@ -11,12 +11,10 @@
     "url": "https://github.com/douzi8/utils-extend"
   },
   "keywords": [
-    "util",
-    "utils",
-    "util-extend",
-    "extend",
-    "underscore",
-    "node underscore"
+    "filepath",
+    "match",
+    "minimatch",
+    "grunt filematch"
   ],
   "author": "douzi <liaowei08@gmail.com>",
   "devDependencies": {
@@ -27,5 +25,8 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/douzi8/utils-extend/issues"
+  },
+  "dependencies": {
+    "utils-extend": "^1.0.6"
   }
 }

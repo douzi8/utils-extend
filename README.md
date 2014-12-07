@@ -1,77 +1,28 @@
-## utils-extend
-Strengthen the ability of util. utils extend node util origin module
-```
-var util = require('utils-extend');
-```
-### install
-```
-npm install utils-extend --save
-```
-## API
-### util.extend
-Deep clone soure object to target
+file-match
+==========
+
+Match filepath is validated, or exclude filepath that don't need
+
 ```js
-var target = {};
-var source = {
-  k: 'v',
-  k2: []
-};
-var source2 = {
-  k3: { }  
-};
+var fileMatch = require('file-match');
 
-util.extend(target, source, source2);
+var filter = fileMatch('*.js');
+
+filter('a.js');            // true
+filter('path/a.js');       // false
+
+var filter = fileMatch([
+  '**/*',
+  '!path/*.js'
+  '!img/**/.{jpg,png,gif}'
+]);
+
+filter('src/demo.js')           // true
+filter('path/demo.js')          // false
+filter('path/path/demo.js')     // true
+filter('img/demo.png')          // false
+filter('img/path/demo.png')     // false
 ```
 
-### util.isObject
-Check target is object, array and function return false.
-
-### util.isArray
-Chck target is array
-```
-uitl.isArray = Array.isArray
-
-```
-### util.isNumber
-
-### util.isDate
-
-### util.isRegExp
-
-### util.isFunction
-
-### util.isString
-
-### util.isUndefined
-
-### util.noop
-Empty function
-
-### util.unique
-Make array unique.
-```
-var arr = [4, 5, 5, 6];
-var result = uitl.unique(arr);
-```
-
-### util.escape
-Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' characters.
-```js
-var html = '<div></div>'
-var result = util.escape('<div></div>')
-```
-
-### util.unescape
-The opposite of escape
-
-### util.path.isAbsolute
-Return true is path isabsolute, otherwise return false.
-```
-util.path.isAbsolute('C:\\file\\path');          // windows
-util.path.isAbsolute('/file/path');              // unix
-```
-
-### util.path.unixifyPath
-Normalize \ paths to / paths.
-
-
+If the filter value is empty string or empty arry, it will always return false,
+if it's ``null``, will always return true.
