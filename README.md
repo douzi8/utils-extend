@@ -1,5 +1,5 @@
 ## utils-extend
-Strengthen the ability of util. utils extend node util origin module
+Extend nodejs util api, and it is light weight and simple
 ```
 var util = require('utils-extend');
 ```

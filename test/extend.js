@@ -14,7 +14,7 @@ describe('extend', function() {
   it('More arguments', function() {
     var target = { k: 'v' };
     var source = { k: 'v2' };
-    var source2 = { k: 'v3' }
+    var source2 = { k: 'v3' };
 
     util.extend(target, source, source2);
 
