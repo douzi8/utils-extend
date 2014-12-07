@@ -10,7 +10,7 @@ var isWindows = process.platform === 'win32';
 ['Function', 'String', 'Number', 'Date', 'RegExp', 'Object'].forEach(function(item) {
   exports['is' + item]  = function(value) {
     return toString.call(value) === '[object ' + item + ']';
-  }
+  };
 });
 
 /**
@@ -77,7 +77,7 @@ exports.unique = function(array) {
   });
 
   return result;
-}
+};
 
 exports.escape = function(value) {
   return String(value)
@@ -86,7 +86,7 @@ exports.escape = function(value) {
     .replace(/'/g, '&#39;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
-}
+};
 
 exports.unescape = function(value) {
   return String(value)
@@ -95,7 +95,7 @@ exports.unescape = function(value) {
     .replace(/&#39;/g, "'")
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>');
-}
+};
 
 exports.hrtime = function(time) {
   if (time) {
