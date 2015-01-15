@@ -1,5 +1,6 @@
-## utils-extend
-Extend nodejs util api, and it is light weight and simple
+# utils-extend
+[![NPM](https://nodei.co/npm/utils-extend.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/utils-extend/)
+Extend nodejs util api, and it is light weight and simple.
 ```
 var util = require('utils-extend');
 ```
@@ -8,6 +9,9 @@ var util = require('utils-extend');
 npm install utils-extend --save
 ```
 ## API
+### util
+Extend api in nodejs util module, 
+
 ### util.extend
 Deep clone soure object to target
 ```js
@@ -52,6 +56,12 @@ Make array unique.
 ```
 var arr = [4, 5, 5, 6];
 var result = uitl.unique(arr);
+```
+### util.pick
+Return a copy of the object with list keys
+```js
+util.pick({ key: 'value' }, 'key');
+util.pick({ key: 'value' }, function(value, key, object) { });
 ```
 
 ### util.escape

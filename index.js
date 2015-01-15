@@ -109,6 +109,36 @@ exports.hrtime = function(time) {
   }
 };
 
+/**
+ * @description
+ * Return a copy of the object with list keys
+ * @example
+ * util.pick({ key: 'value' }, 'key', 'key1');
+ * util.pick(obj, function(value, key, object) { });
+ */
+exports.pick = function(obj, iteratee) {
+  var result = {};
+
+  if (exports.isFunction(iteratee)) {
+    for (var key in obj) {
+      var value = obj[key];
+      if (iteratee(value, key, obj)) {
+        result[key] = value;
+      }
+    }
+  } else {
+    var keys = Array.prototype.slice.call(arguments, 1);
+
+    keys.forEach(function(key) {
+      if (key in obj) {
+        result[key] = obj[key];
+      }
+    });
+  }
+
+  return result;
+};
+
 exports.path = {};
 
 if (isWindows) {
