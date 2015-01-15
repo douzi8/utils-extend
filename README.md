@@ -1,5 +1,5 @@
 # utils-extend
-[![NPM](https://nodei.co/npm/utils-extend.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/utils-extend/)
+[![NPM](https://nodei.co/npm/utils-extend.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/utils-extend/)  
 Extend nodejs util api, and it is light weight and simple.
 ```
 var util = require('utils-extend');
