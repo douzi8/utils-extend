@@ -6,8 +6,12 @@ var util = require('util');
 var toString = Object.prototype.toString;
 var isWindows = process.platform === 'win32';
 
+function isObject(value) {
+  return toString.call(value) === '[object Object]';
+}
+
 // And type check method: isFunction, isString, isNumber, isDate, isRegExp, isObject
-['Function', 'String', 'Number', 'Date', 'RegExp', 'Object'].forEach(function(item) {
+['Function', 'String', 'Number', 'Date', 'RegExp'].forEach(function(item) {
   exports['is' + item]  = function(value) {
     return toString.call(value) === '[object ' + item + ']';
   };
@@ -32,8 +36,8 @@ function extend(target, source) {
       }
 
       extend(target[key], value);
-    } else if (exports.isObject(value)) {
-      if (!exports.isObject(target[key])) {
+    } else if (isObject(value)) {
+      if (!isObject(target[key])) {
         target[key]  = {};
       }
 
@@ -47,6 +51,9 @@ function extend(target, source) {
 }
 
 extend(exports, util);
+
+// fixed util.isObject 
+exports.isObject = isObject;
 
 exports.extend = function() {
   var args = Array.prototype.slice.call(arguments, 0);

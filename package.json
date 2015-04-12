@@ -1,6 +1,6 @@
 {
   "name": "utils-extend",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Extend nodejs util api, and it is light weight and simple",
   "main": "index.js",
   "scripts": {
