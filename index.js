@@ -29,7 +29,7 @@ function extend(target, source) {
 
   for (var key in source) {
     value = source[key];
-
+    if(key !== '__proto__') {
     if (Array.isArray(value)) {
       if (!Array.isArray(target[key])) {
         target[key] = [];
@@ -45,6 +45,7 @@ function extend(target, source) {
     } else {
       target[key] = value;
     }
+  }
   }
 
   return target;
