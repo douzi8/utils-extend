@@ -29,7 +29,9 @@ function extend(target, source) {
 
   for (var key in source) {
     value = source[key];
-
+    if (key === '__proto__' || key === 'prototype' || key === 'constructor' ){
+      return target
+    }
     if (Array.isArray(value)) {
       if (!Array.isArray(target[key])) {
         target[key] = [];
